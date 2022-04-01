@@ -1,0 +1,58 @@
+{
+  "products": [
+    {
+      "id": 2,
+      "name": "Product P",
+      "price": 600,
+      "img": "https://picsum.photos/1600/900"
+    },
+    {
+      "id": 3,
+      "name": "Product C",
+      "price": 700,
+      "img": "https://picsum.photos/1600/900"
+    },
+    {
+      "id": 4,
+      "name": "Product D",
+      "price": 800,
+      "img": "https://picsum.photos/1600/900"
+    },
+    {
+      "id": 5,
+      "name": "Product E",
+      "price": 900,
+      "img": "https://picsum.photos/1600/900"
+    },
+    {
+      "id": 6,
+      "name": "Product F",
+      "price": 400,
+      "img": "https://picsum.photos/1600/900"
+    },
+    {
+      "id": 7,
+      "name": "Product G",
+      "price": 800,
+      "img": "https://picsum.photos/1600/900"
+    },
+    {
+      "id": 8,
+      "name": "Product H",
+      "price": 700,
+      "img": "https://picsum.photos/1600/900"
+    },
+    {
+      "name": "Product J",
+      "price": "5000000",
+      "img": "https://picsum.photos/1600/900",
+      "id": 9
+    },
+    {
+      "name": "Product T",
+      "price": "2242",
+      "img": "https://picsum.photos/1600/900",
+      "id": 10
+    }
+  ]
+}
