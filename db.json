@@ -3,48 +3,48 @@
     {
       "id": 3,
       "name": "Product C",
-      "price": 700,
+      "price": "$ 7.00",
       "img": "https://picsum.photos/1600/900"
     },
     {
       "id": 4,
       "name": "Product D",
-      "price": 800,
+      "price": "$ 8.00",
       "img": "https://picsum.photos/1600/900"
     },
     {
       "id": 5,
       "name": "Product E",
-      "price": 900,
+      "price": "$ 9.00",
       "img": "https://picsum.photos/1600/900"
     },
     {
       "id": 6,
       "name": "Product F",
-      "price": 400,
+      "price": "$ 4.00",
       "img": "https://picsum.photos/1600/900"
     },
     {
       "id": 7,
       "name": "Product G",
-      "price": 800,
+      "price": "$ 8.00",
       "img": "https://picsum.photos/1600/900"
     },
     {
       "id": 8,
       "name": "Product H",
-      "price": 700,
+      "price": "$ 7.00",
       "img": "https://picsum.photos/1600/900"
     },
     {
       "name": "Product J",
-      "price": "5000000",
+      "price": "$ 5.00",
       "img": "https://picsum.photos/1600/900",
       "id": 9
     },
     {
       "name": "Product T",
-      "price": "2242",
+      "price": "$ 7.00",
       "img": "https://picsum.photos/1600/900",
       "id": 10
     }

@@ -42,9 +42,6 @@ const Dashboard = (props: Props) => {
         </div>
       </div>
     </aside>
-    <section className="w-full p-4">
-      <div className="w-full h-64 border-dashed border-4 p-4 text-md"></div>
-    </section>
   </main>
 </div>
 
