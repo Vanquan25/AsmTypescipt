@@ -12,6 +12,7 @@ import Dashboard from './pages/Dashboard'
 import ProductManager from './pages/ProductManager'
 import ProductEdit from './pages/ProductEdit'
 import ProductAdd from './pages/ProductAdd'
+import Signup from './pages/Signup'
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
@@ -60,6 +61,7 @@ function App() {
                   <Route path="add" element={<ProductAdd onAdd={onHandleAdd} />} />
                 </Route>
         </Route>
+        {/* <Route path='/signup' element={<Signup />}/> */}
       </Routes>
     </div>
   )
