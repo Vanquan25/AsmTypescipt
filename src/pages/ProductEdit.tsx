@@ -47,7 +47,7 @@ const onSubmit : SubmitHandler<FromInput> = data =>{
       </div>
       <div>
         <label htmlFor="price" className="text-lx font-serif">Price:</label>
-        <input type="text" {...register('price')} placeholder="price" id="price" className="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
+        <input type="number" {...register('price')} placeholder="price" id="price" className="ml-2 outline-none py-1 px-2 text-md border-2 rounded-md" />
         {errors.price && <span>Bắt buộc phải nhập trường này!</span>}
       </div>
       <div>

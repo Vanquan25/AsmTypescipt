@@ -6,7 +6,7 @@ type Props = {}
 const AdminLayout = (props: Props) => {
   return (
     <div>  
-        <Outlet />
+<Outlet/>
     </div>
   )
 }

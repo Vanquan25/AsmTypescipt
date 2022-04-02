@@ -32,12 +32,12 @@ function App() {
   const onHandleRemove = async (id: number) => {
     remove(id);
 
-    setProducts(products.filter(item => item.id !== id));
+    setProducts(products.filter(item => item._id !== id));
   }
   const onHandleUpdate = async (product: ProductType) => {
     try {
        const {data} = await update(product);
-       setProducts(products.map(item => item.id === data._id ? product : item))
+       setProducts(products.map(item => item._id === data._id ? product : item))
     } catch (error) {
       
     }
@@ -52,10 +52,10 @@ function App() {
             <Route path="/product/:id" element= {<ProductDetail />} />
           </Route>
         </Route>
-        <Route path="admin" element={<AdminLayout />}>
-            <Route index element={<Dashboard />}/>
+        <Route path="admin" element={<Dashboard />}>
+            <Route index element={<ProductManager products={products} onRemove={onHandleRemove} />}/>
             <Route path="product">
-                  <Route index  element={<ProductManager products={products} onRemove={onHandleRemove} />} />
+            <Route index element={<ProductManager products={products} onRemove={onHandleRemove} />}/>
                   <Route path=":id/edit" element={<ProductEdit onUpdate={onHandleUpdate}/>} />
                   <Route path="add" element={<ProductAdd onAdd={onHandleAdd} />} />
                 </Route>

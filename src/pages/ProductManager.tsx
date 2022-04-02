@@ -55,8 +55,8 @@ const ProductManager = (props: ProductManagerProps) => {
                 <div className="text-sm text-gray-900"></div>
               </td>
               <td className="py-3 px-6 text-left whitespace-nowrap">
-                <Link to={`/admin/product/${item.id}/edit`} className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Edit</Link>
-                <button onClick={() => props.onRemove(item.id)} className="py-2 px-4 bg-[#FF0000] text-white font-semibold rounded-lg shadow-md hover:bg-[#CC0000] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Remove</button></td>
+                <Link to={`/admin/product/${item._id}/edit`} className="py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Edit</Link>
+                <button onClick={() => props.onRemove(item._id)} className="py-2 px-4 bg-[#FF0000] text-white font-semibold rounded-lg shadow-md hover:bg-[#CC0000] focus:outline-none focus:ring-2 focus:ring-blue-400 focus:ring-opacity-75">Remove</button></td>
             </tr>
           })}
         </tbody>

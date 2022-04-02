@@ -1,10 +1,12 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
+import ProductManager from "./ProductManager";
 
 type Props = {}
 
 const Dashboard = (props: Props) => {
     return (
-        <div>
+      <div>
   <header className="w-full bg-gray-800 p-4 flex justify-between items-center">
     <nav className="flex items-center">
       <img className="w-7 h-7" src="https://www.solarwinds.com/-/media/solarwinds/swdcv2/licensed-products/service-desk/integrations/sd-integrations-logo-jira.ashx?rev=701fbaa7f8ac4ae08e0406c8984c43e7&hash=75D4F04DE99B88DE7B2C4193F0616F1F" />
@@ -12,7 +14,7 @@ const Dashboard = (props: Props) => {
         <a href="#" className="bg-gray-900 hover:bg-gray-700 p-2 rounded cursor-pointer">Dashboard</a>
         <a href="#" className="bg-gray-900 hover:bg-gray-700 p-2 rounded cursor-pointer ml-1">Projects</a>
         <a href="#" className="bg-gray-900 hover:bg-gray-700 p-2 rounded cursor-pointer ml-1">Issues</a>
-        <a href="#" className="bg-gray-900 hover:bg-gray-700 p-2 rounded cursor-pointer ml-1">Boards</a>
+        <a href="admin/product/add" className="bg-gray-900 hover:bg-gray-700 p-2 rounded cursor-pointer ml-1">Add POST</a>
       </div>
     </nav>
     <div className="w-8 h-8 cursor-pointer">
@@ -37,14 +39,16 @@ const Dashboard = (props: Props) => {
         <div className="flex p-3 text-white bg-red-500 rounded cursor-pointer text-center text-sm">
           <button className="rounded inline-flex items-center">
             <svg className="w-4 h-4 mr-2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"  /></svg>
-            <span className="font-semibold">Logout</span>
+            <a href="/"><span className="font-semibold">Logout</span></a>
           </button>
         </div>
       </div>
     </aside>
+    <div className="w-full divide-y divide-gray-200">
+  <Outlet/>
+  </div>
   </main>
 </div>
-
     )
 }
 
