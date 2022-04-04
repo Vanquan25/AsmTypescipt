@@ -3,46 +3,63 @@ import { Route, Routes } from 'react-router-dom'
 import WebsiteLayout from './pages/layouts/WebsiteLayout'
 import { ProductType } from './types/Product'
 import { create, list, remove, update } from './api/product'
-import ProductList from './components/ProductList'
 import ProductDetail from './pages/ProductDetail'
 import Products from './pages/Products'
 import HomePage from './pages/HomePage'
-import AdminLayout from './pages/layouts/AdminLayout'
 import Dashboard from './pages/Dashboard'
 import ProductManager from './pages/ProductManager'
 import ProductEdit from './pages/ProductEdit'
 import ProductAdd from './pages/ProductAdd'
 import Signup from './pages/Signup'
+import Signin from './pages/Signin'
+import { toast, ToastContainer } from 'react-toastify'
+import "react-toastify/dist/ReactToastify.min.css"
 
 function App() {
   const [isLoading, setIsLoading] = useState(false);
   const [products, setProducts] = useState<ProductType[]>([])
 
   useEffect(() => {
-    const getProduct = async () => {
-      const { data } = await list();
-      setProducts(data);
-    };
-    getProduct();
-  }, [])
-
-  const onHandleAdd = async (product: any) => {
-    const {data} = await create(product);
-    setProducts([...products, data]);
-  }
-  const onHandleRemove = async (id: number) => {
-    remove(id);
-
-    setProducts(products.filter(item => item._id !== id));
-  }
-  const onHandleUpdate = async (product: ProductType) => {
-    try {
-       const {data} = await update(product);
-       setProducts(products.map(item => item._id === data._id ? product : item))
-    } catch (error) {
-      
+    const getProducts = async () => {
+        const { data } = await list();
+        setProducts(data);
     }
+    getProducts();
+}, []);
+
+const onHandleRemove = async (id: number) => {
+  try {
+    const { data } = await remove(id);
+    setProducts(products.filter(item => item._id !== id));
+    if(data){
+      toast.success("Xoa thanh cong");
+    }  
+  } catch (error) {
+   
   }
+}
+const onHandleAdd = async (product: ProductType) => {
+   try {
+      const { data } = await create(product);
+      setProducts([...products, data]);
+      if(data){
+        toast.success("Them thanh cong");
+      }  
+   } catch (error) {
+     
+   }
+}
+const onHandleUpdate = async (product: ProductType) => {
+  try {
+     const { data } = await update(product);
+     setProducts(products.map(item => item._id === data._id ? product : item))
+     if(data){
+       toast.success("Sua thanh cong");
+     }  
+  } catch (error) {
+    
+  }
+}
   return (
     <div className="App">
       <Routes>
@@ -52,6 +69,8 @@ function App() {
             <Route index element={<Products products={products} />}/>
             <Route path="/product/:id" element= {<ProductDetail />} />
           </Route>
+        <Route path='/signup' element={<Signup />}/>
+        <Route path='/signin' element={<Signin />}/>
         </Route>
         <Route path="admin" element={<Dashboard />}>
             <Route index element={<ProductManager products={products} onRemove={onHandleRemove} />}/>
@@ -61,8 +80,8 @@ function App() {
                   <Route path="add" element={<ProductAdd onAdd={onHandleAdd} />} />
                 </Route>
         </Route>
-        {/* <Route path='/signup' element={<Signup />}/> */}
       </Routes>
+      <ToastContainer />
     </div>
   )
 }
