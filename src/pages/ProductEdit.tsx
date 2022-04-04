@@ -28,7 +28,6 @@ useEffect(()=>{
 const onSubmit : SubmitHandler<FromInput> = data =>{
     props.onUpdate(data)
     navigate("/admin/product");
-    // console.log(data)
 }
   return (
     <form action="" onSubmit={handleSubmit(onSubmit)}>
