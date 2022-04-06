@@ -41,7 +41,7 @@ const ProductList = ({products}: ProductListProps) => {
         {products?.map((product, index) => {
             return (
                 <div className="col-span-4 sm:col-span-4 md:col-span-2 lg:col-span-1 xl:col-span-1 flex flex-col items-center" key={index} >
-                <div className="bg-white rounded-lg mt-5">
+                <div className="bg-white rounded-lg mt-5 max-w-xs hover:scale-110 transition duration-300 ease-in-out">
                   <img src={product.img} className="h-40 rounded-md" />
                 </div>
                 <div className="bg-white shadow-lg rounded-lg -mt-6 w-70">
