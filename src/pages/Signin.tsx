@@ -16,11 +16,16 @@ const Signin = () => {
   const onSumbit: SubmitHandler<Input> = async (user) => {
     const { data } = await signin(user);
     if(data){
-        toast.success("Bạn đã đăng nhập thành công, chờ 3s");
+        toast.success("Bạn đã đăng nhập thành công");
         setTimeout(() => {
             navigate('/')
             localStorage.setItem("user",JSON.stringify(data))
-        }, 3000)
+            if (data.user.role === 1) {
+              navigate('/admin')
+          } else {
+            navigate('/')
+          }
+        }, 2000)
     }
 }
   return (

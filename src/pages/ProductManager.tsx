@@ -49,7 +49,7 @@ const ProductManager = (props: ProductManagerProps) => {
                 <div className="text-sm text-gray-900">{item.price}</div>
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
-                <div className="text-sm text-gray-900">{item.img}</div>
+               <img src={item.img}alt="" className='w-20 h-10' />
               </td>
               <td className="px-6 py-4 whitespace-nowrap">
                 <div className="text-sm text-gray-900"></div>
